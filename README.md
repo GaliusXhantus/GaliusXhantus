@@ -1,3 +1,3 @@
-# Pokedex
+# Pokédex
 
-<h1> Pokedex usando Flask. </h1>
+Para acesasar minha Pokédex click aqui --> https://galiusxhantus.github.io/pokedex
