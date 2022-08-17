@@ -1,7 +1,4 @@
-const pokeName = document.querySelector('.poke-name')
-const pokeId = document.querySelector('.poke-id')
-const pokeImage = document.querySelector('.poke-card img')
-
+const main = document.querySelector('main')
 
 async function GetPokemon (Pokemon){
 	const URL = `https://pokeapi.co/api/v2/pokemon/${Pokemon}`;
@@ -13,14 +10,34 @@ async function GetPokemon (Pokemon){
 
 }
 
-async function DataPokemon(pokemon){
 
-	let dataPokemon = await GetPokemon(pokemon)
-	
-    pokeName.innerHTML = dataPokemon.name
-    pokeId.innerHTML = dataPokemon.id
-    pokeImage.src = dataPokemon['sprites']['other']['official-artwork']['front_default']
+function CreateElement(tag, className){
+	const element = document.createElement(tag);
+	element.className = className;
+
+	return element;
 }
 
 
-DataPokemon(4)
+async function RenderPokemon(pokemon){
+
+	const dataPokemon = await GetPokemon(pokemon);
+	const pokeCard = CreateElement('div', 'poke-card');
+	const pokeImage = CreateElement('img', 'poke-image');
+	const pokeId = CreateElement('p', 'poke-id');
+	const pokeName = CreateElement('p', 'poke-name');
+
+	main.appendChild(pokeCard);
+	pokeCard.appendChild(pokeImage);
+	pokeCard.appendChild(pokeId);
+	pokeCard.appendChild(pokeName);
+
+
+    pokeImage.src = dataPokemon['sprites']['other']['official-artwork']['front_default'];
+	pokeId.innerHTML = dataPokemon.id;
+	pokeName.innerHTML = dataPokemon.name;
+}
+
+for (let pokemon = 0; pokemon < 152; pokemon++) {
+	RenderPokemon(pokemon);
+}

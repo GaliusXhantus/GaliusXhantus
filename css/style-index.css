@@ -3,6 +3,7 @@
     padding: 0;
     border: none;
     box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 body{
@@ -30,7 +31,7 @@ main{
     width: 100%;
 }
 
-.poke-card img{
+.poke-image{
     max-width: 210px;
     width: 100%;
 }
