@@ -5,18 +5,32 @@
     box-sizing: border-box;
 }
 
-main{
-    max-width: 100vw;
-    width: 100%;
-    height: 100vh;
-    background: #333;
+body{
+    display: flex;
+    justify-content: center;
 
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    background: #4e4e4e;
 }
 
-.poke-card{
-    max-width: 250px;
+main{
+    max-width: 90vw;
     width: 100%;
-    background: #00f;
+    height: 100%;
+
+    margin-top: 20px;
+
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+
+.poke-card{
+    max-width: 210px;
+    width: 100%;
+}
+
+.poke-card img{
+    max-width: 210px;
+    width: 100%;
 }
