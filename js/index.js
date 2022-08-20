@@ -38,6 +38,14 @@ async function RenderPokemon(pokemon){
 	pokeName.innerHTML = dataPokemon.name;
 }
 
-for (let pokemon = 0; pokemon < 152; pokemon++) {
-	RenderPokemon(pokemon);
+
+async function onload(pokemons){
+	
+	for (let pokemon = 1; pokemon < pokemons; pokemon++) {
+		await RenderPokemon(pokemon);
+		
+	}
+	
+
 }
+onload(152);
