@@ -10,14 +10,12 @@ async function GetPokemon (Pokemon){
 
 }
 
-
 function CreateElement(tag, className){
 	const element = document.createElement(tag);
 	element.className = className;
 
 	return element;
 }
-
 
 async function RenderPokemon(pokemon){
 
@@ -38,7 +36,6 @@ async function RenderPokemon(pokemon){
 	pokeName.innerHTML = dataPokemon.name;
 }
 
-
 async function onload(pokemons){
 	
 	for (let pokemon = 1; pokemon < pokemons; pokemon++) {
@@ -48,4 +45,5 @@ async function onload(pokemons){
 	
 
 }
+
 onload(152);
